@@ -1,5 +1,8 @@
 <?php
 
+use App\Services\ParsingService;
+use App\Services\TelegramService;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $telegramService = new TelegramService();
+    $parsingService = new ParsingService();
+    $parsingService->parse($telegramService);
 });

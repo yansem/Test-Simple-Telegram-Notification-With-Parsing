@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'env_var' => [
+        'tg_token' => env('TG_TOKEN'),
+        'tg_chat_id' => env('TG_CHAT_ID')
+    ]
+
 ];
